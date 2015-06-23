@@ -4,25 +4,25 @@ The PIP (Person Initiating Poll) is the admin user who creates a poll that is se
 
 
 ### Tables ###
-*** responders ***
+**responders**
 - id -> integer
 - e_mail -> string
 - age_id -> integer
 
-*** timeframes ***
+**timeframes**
 - id -> integer
 - range -> string
 
-*** available_times ***
+**available_times**
 - responders_id -> integer
 - timeframes_id -> integer
 - days_id (ONLY if I have time)
 
-*** ages  ***
+**ages**
 - id -> integer
 - range -> string
 
-*** days *** (ONLY if I have time)
+**days** (ONLY if I have time)
 - id -> integer
 - date -> String
 
