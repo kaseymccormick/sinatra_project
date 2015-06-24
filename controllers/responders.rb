@@ -10,8 +10,19 @@ get "/responder/save" do
     @new = true
     erb :"responders/responder_saved"
   else
+    binding.pry
+    Responder.get("id")
+    binding.pry
     erb :"responders/edit_availability_form"
   end
+  
 end
+get "responder/e_mail_save" do
+# need to have the form give me id and new email
+responder = Responder.find(params["id"])
+responder.e_mail = (params["new_e_mail"])
+responder.save
 
-    
+@song_edit = true  
+erb :"complete_song_list"
+end

@@ -95,8 +95,10 @@ class Responder
       get_e_mail(e_mail).length > 0
     end
     
+    def change_email(new_e_mail)
+      @title = new_e_mail
+    end
 
-    
-#add a new record
+
 
 end
