@@ -54,38 +54,34 @@ module DatabaseClassMethods
     return results_as_objects
   end
 
-  # Get a single row.
+  #find a row by id and return objects
   #
-  # id - The record's Integer ID.
+  #find - id ->integer
   #
-  # Returns an Array containing the Hash of the row.
+  #returns object of id's row
   def find(id)
     # Figure out the table's name from the class we're calling the method on.
-    table_name = self.to_s.pluralize.underscore
+    table_name    = self.to_s.pluralize.underscore
 
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{id}")
-    
-    results_as_objects = []
-  
-    results.each do |result_hash|
-      results_as_objects << self.new(result_hash)
-    end
-  
-    return results_as_objects
+     
+      if results.empty?
+        return nil
+      else
+        result_hash = results.first
+        self.new(result_hash)
+      end
+      
   end
-  
+ 
   #delete a single row
   #
   #id - the records integer id
   #
-  #returns.. BLEH
+  #returns empty array
   def delete(id)
     table_name = self.to_s.pluralize.underscore  
     CONNECTION.execute("DELETE FROM #{table_name} WHERE id = #{id}")
   end
-    #
-  # def save
-  #   table_name = self.to_s.pluralize.underscore
-  #   CONNECTION.execute("UPDATE #{table_name} SET title = '#{title}', WHERE id = #{song_id};")
-  # end
+    
 end
