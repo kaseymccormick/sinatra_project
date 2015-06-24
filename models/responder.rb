@@ -69,7 +69,7 @@ class Responder
     #returns results as objects array
     def self.get_e_mail(e_mail)    
       # Get the first/only row as a Hash.
-      result = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = '#{e_mail}'") #may not need.first
+      result = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = '#{e_mail}'") 
      
       results_as_objects = []
       
@@ -83,7 +83,9 @@ class Responder
     end
     
     def save
-       CONNECTION.execute("UPDATE responders SET e_mail = '#{@e_mail}', age = #{@age_id} WHERE id = #{@id};")
+      string = "UPDATE responders SET e_mail = '#{@e_mail}', age_id = #{@age_id} WHERE id = #{@id};"
+
+       CONNECTION.execute(string)
     end
     
     #verify it's not a duplicate

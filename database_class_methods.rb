@@ -62,8 +62,16 @@ module DatabaseClassMethods
   def find(id)
     # Figure out the table's name from the class we're calling the method on.
     table_name = self.to_s.pluralize.underscore
+
+    results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{id}")
+    
+    results_as_objects = []
   
-    CONNECTION.execute("SELECT FROM #{table_name} WHERE id = #{id}")
+    results.each do |result_hash|
+      results_as_objects << self.new(result_hash)
+    end
+  
+    return results_as_objects
   end
   
   #delete a single row

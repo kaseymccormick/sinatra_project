@@ -1,13 +1,13 @@
 <h2>You've already been a responder to this poll</h2>
 <p> you can only edit items from here. </p>
 <h3>You're welcome to edit the following:</h3>
-  <form action ="responder/e_mail_save">
+  <form action ="/responder/e_mail_save">
     <label for="e_mail">e-mail on file is:</label>
     <input type="text" placeholder="bleh@aol.com" name="e_mail" value="<%= params["e_mail"] %>"</br>
     
-    <input type="hidden" name="id" value="<%= params["id"] %>">
-    
-    <input type="submit" value="update">
+    <input type="hidden" name="id" value="<%= @user.id %>">
+  
+    <input type="submit" value="update">  
   </form>
     
     <h3>availability</h3>
