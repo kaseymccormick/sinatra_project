@@ -1,4 +1,3 @@
-#any responders controller items
 
 get "/responder/add" do
   erb :"responders/add_responder_form"

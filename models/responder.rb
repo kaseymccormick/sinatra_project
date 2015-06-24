@@ -22,7 +22,7 @@ class Responder
     #
     #e_mail - string(text) age_id Integer
     #
-    #returns array or false TODO  
+    #returns array of object or false   
     def self.add(options={})
       #if the email is in the table it exists (true) if email doesnt exist = false if false add to the table
     
