@@ -17,7 +17,7 @@ end
 
 get "/responder/e_mail_save" do
 
-  user = Responder.find_as_object(params["id"].to_i).first
+  user = Responder.find(params["id"].to_i)
   new_email = params["e_mail"]
   user.e_mail = new_email
   user.save
@@ -26,3 +26,5 @@ get "/responder/e_mail_save" do
   erb :"responders/responder_saved"
 
 end
+
+

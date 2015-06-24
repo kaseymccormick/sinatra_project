@@ -72,9 +72,7 @@ class Responder
     get_e_mail(e_mail).length > 0
   end
     
-  def change_email(new_e_mail)
-    @e_mail = new_e_mail
-  end
+end
 
 
 
