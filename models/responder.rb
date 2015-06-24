@@ -74,7 +74,7 @@ class Responder
       results_as_objects = []
         if result
         result.each do |result_hash|
-        results_as_objects << Responder.new(result_hash["id"], result_hash["email"], result_hash["age_id"])
+        results_as_objects << Responder.new(result_hash["id"], result_hash["e_mail"], result_hash["age_id"])
         end
     end
       
