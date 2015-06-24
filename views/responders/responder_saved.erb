@@ -1,13 +1,14 @@
 <% if @new %>
-  <p>Responder has been added.</p>
+<p>Responder has been added.</p>
+
 <% end %>
 <% if @responder_edit %>
-  <p>Email has been updated</p>
+<p>Email has been updated</p>
 <% end %>
 
-  <ul>
-    <li>Id e-mail age_id</li>
-    <% Responder.all.each do |responder| %>
-       <li> ID<%= responder.id %> – <%= responder.e_mail %> – <%= responder.age_id %> </li>
-    <% end %>
-  </ul>
+<ul>
+  <li>Id e-mail age_id</li>
+  <% Responder.all.each do |responder| %>
+  <li> ID<%= responder.id %> – <%= responder.e_mail %> – <%= responder.age_id %> </li>
+  <% end %>
+</ul>
