@@ -25,9 +25,9 @@ class Responder
     #returns array or false TODO  
     def self.add(e_mail, age_id)
       #if the email is in the table it exists (true) if email doesnt exist = false if false add to the table
-      binding.pry
+    
       if self.exist?(e_mail) == false
-      binding.pry
+    
       CONNECTION.execute("INSERT INTO responders (e_mail, age_id) VALUES ('#{e_mail}', #{age_id});")
     
       id = CONNECTION.last_insert_row_id
@@ -72,10 +72,11 @@ class Responder
       result = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = '#{e_mail}'").first #may not need.first
      
       results_as_objects = []
-  
-      result.each do |result_hash|
-      results_as_objects << Responder.new(result_hash["id"], result_hash["email"], result_hash["age_id"])
-      end
+        if result
+        result.each do |result_hash|
+        results_as_objects << Responder.new(result_hash["id"], result_hash["email"], result_hash["age_id"])
+        end
+    end
       
       return results_as_objects
     end

@@ -1,5 +1,5 @@
 # Load/create our database for this program.
-CONNECTION = SQLite3::Database.new("drakon.db")
+CONNECTION = SQLite3::Database.new("availability.db")
 
 # Make the tables.
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS responders (id INTEGER PRIMARY KEY, e_mail TEXT, age_id INTEGER);")
