@@ -1,0 +1,9 @@
+<% if @new %>
+  <p>Responder has been added.</p>
+<% end %>
+  <ul>
+    <li>Id e-mail age_id</li>
+    <% Responder.all.each do |responder| %>
+       <li> ID<%= responder.id %> – <%= responder.e_mail %> – <%= responder.age_id %> </li>
+    <% end %>
+  </ul>
