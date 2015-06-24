@@ -6,7 +6,7 @@ end
 
 get "/responder/save" do
   
-  if Responder.add(params["e_mail"], params["age_id"].to_i)
+  if Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})
     @new = true
     erb :"responders/responder_saved"
   else
