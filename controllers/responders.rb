@@ -14,14 +14,15 @@ get "/responder/save" do
   end
   
 end
+
 get "/responder/e_mail_save" do
-# need to have the form give me id and new email
 
-user = Responder.find(params["id"].to_i).first
-new_email = (params["e_mail"])
-user.e_mail = new_email
-user.save
+  user = Responder.find_as_object(params["id"].to_i).first
+  new_email = params["e_mail"]
+  user.e_mail = new_email
+  user.save
 
-@responder_edit = true  
-erb :"responders/responder_saved"
+  @responder_edit = true  
+  erb :"responders/responder_saved"
+
 end
