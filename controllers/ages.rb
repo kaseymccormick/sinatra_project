@@ -1,5 +1,5 @@
 get '/age/edit' do
-  erb :"ages/add_age_group_form"
+  erb :"ages/add_age_range_form"
 end
 
 get '/age/save' do
@@ -13,7 +13,7 @@ get '/age/save' do
  
   @new_group = true  
   #update the database then send them to
-  erb :"days/add_age_group_form"
+  erb :"days/add_age_range_form"
   #so it acts like just reloaded page
 end
 

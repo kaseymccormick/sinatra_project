@@ -9,17 +9,17 @@ class Age
   include DatabaseInstanceMethods
   
   attr_reader :id 
-  attr_accessor :group
+  attr_accessor :range
   
   #initalize a new responder object
   def initialize(options={})
     @id = options["id"].to_i
-    @group = options["group"]
+    @range = options["range"]
   end
   
   # may not use this method..
   def save
-    string = "UPDATE age SET group = '#{@group}' WHERE id = #{@id};"
+    string = "UPDATE ages SET range = '#{@range}' WHERE id = #{@id};"
     CONNECTION.execute(string)
   end
 end
