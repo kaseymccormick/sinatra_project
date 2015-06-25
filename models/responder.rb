@@ -29,9 +29,10 @@ class Responder
     if self.exist?(options["e_mail"]) == false
     
       CONNECTION.execute("INSERT INTO responders (e_mail, age_id) VALUES ('#{options["e_mail"]}', #{options["age_id"]});")
-    
+
       id = CONNECTION.last_insert_row_id
-    
+      options["id"] = id
+
       Responder.new({"id" => options["id"], "email" => options["e_mail"], "age_id" => options["age_id"]})
     else
       #if it exists don't add to table return false
