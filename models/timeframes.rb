@@ -3,7 +3,7 @@ require_relative "../database_setup.rb"
 require_relative "../database_class_methods.rb"
 require_relative "../database_instance_methods.rb"
 
-class TimeFrames
+class TimeFrame
   
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
