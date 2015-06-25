@@ -14,7 +14,7 @@ class Day
   #initalize a new responder object
   def initialize(options={})
     @id = options["id"].to_i
-    @range = options["date"]
+    @date = options["date"]
   end
   
   # may not use this method..
