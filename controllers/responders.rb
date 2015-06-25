@@ -15,6 +15,10 @@ get "/responder/save" do
   
 end
 
+get "/responder/list" do
+  erb :"responders/responder_saved"
+end
+
 get "/responder/e_mail_save" do
 
   user = Responder.find(params["id"].to_i)
