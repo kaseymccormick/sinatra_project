@@ -16,3 +16,8 @@ class TimeFrames
     @id = options["id"].to_i
     @range = options["range"]
   end
+  
+  def save
+    string = "UPDATE timeframes SET range = '#{@range}'} WHERE id = #{@id};"
+    CONNECTION.execute(string)
+  end

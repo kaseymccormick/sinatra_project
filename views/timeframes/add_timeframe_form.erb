@@ -1,0 +1,16 @@
+<% if @new_timeframe %>
+<h3>New timeframe has been added</h3>
+<% end %>
+<h3>Adding a Timeframe</h3>
+  <ul>the current Timeframes are:
+    <% TimeFrame.all.each do |timeframe| %>
+       <li> ID <%= timeframe.id %> – <%= timeframe.range %> </li>
+    <% end %>
+  </ul>
+    
+<form action="/add_type"> 
+    <label for="timeframe">New Timeframe range:</label> 
+      <input type="text" placeholder="10:00AM - 12:01PM" name="timeframe">
+    <input type="submit">
+      
+</form>
