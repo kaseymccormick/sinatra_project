@@ -3,7 +3,7 @@
 <% end %>
 <h3>Adding a Timeframe</h3>
   <ul>the current Timeframes are:
-    <% TimeFrame.all.each do |timeframe| %>
+    <% TimeFrames.all.each do |timeframe| %>
        <li> ID <%= timeframe.id %> – <%= timeframe.range %> </li>
     <% end %>
   </ul>
