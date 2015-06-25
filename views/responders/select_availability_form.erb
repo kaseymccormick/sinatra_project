@@ -1,29 +1,20 @@
 <h3>let's collect you're availability</h3>
 <ol>
 <li>click checkboxes by days that you're <b>available</b> to attend 
-<li>Click checkboxes by *all* timeslots that you're available </li>
+<li>Click checkboxes by <b>all</b> timeslots that you're available </li>
 </ol>
 <form action="user_availability/save"
-  <ul>
-    <li>Day</li>
-      <ul>
-         <li>Time slot 1</li>
-         <li>Time slot 2</li>
-      </ul>
-    <li>Day2</li>
-      <ul>
-         <li>Time slot 1</li>
-         <li>Time slot 2</li>
-      </ul>
-    <li>Day3</li>
-      <ul>
-         <li>Time slot 1</li>
-         <li>Time slot 2</li>
-      </ul>
-    <li>Day4</li>
-      <ul>
-         <li>Time slot 1</li>
-         <li>Time slot 2</li>
-      </ul>
-  </ul>
+  
+  <% Day.all.each do |dates|%>
+  <br><input type="checkbox" name="days_id[]" value="<%=dates.id%>" > <%=dates.date %>
+     <fieldset>
+        
+          <% TimeFrame.all.each do |frames| %>
+             </br><input type="checkbox" name="timeframes_id[]" value="<%= frames.id %>" > <%= frames.range %> 
+          <% end %>
+          
+      </fieldset>  
+   <% end %>
+
+  <input type="submit" value="Submit">
 </form>
