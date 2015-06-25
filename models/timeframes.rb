@@ -21,3 +21,4 @@ class TimeFrames
     string = "UPDATE timeframes SET range = '#{@range}'} WHERE id = #{@id};"
     CONNECTION.execute(string)
   end
+end
