@@ -1,5 +1,5 @@
 get '/age/edit' do
-  erb :"days/add_age_group_form"
+  erb :"ages/add_age_group_form"
 end
 
 get '/age/save' do
