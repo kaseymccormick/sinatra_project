@@ -18,7 +18,7 @@ class TimeFrame
   end
   
   def save
-    string = "UPDATE timeframes SET range = '#{@range}'} WHERE id = #{@id};"
+    string = "UPDATE timeframes SET range = '#{@range}' WHERE id = #{@id};"
     CONNECTION.execute(string)
   end
 end

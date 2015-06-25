@@ -9,8 +9,8 @@ get '/timeframes/save' do
   # new_range = params["range"]
   # frame.range = new_range
   # frame.save
-  new_range = TimeFrame.new(params["range"])
-  new_range.save
+  TimeFrame.add(params)
+
  
   @new_timeframe = true  
   #update the database then send them to
