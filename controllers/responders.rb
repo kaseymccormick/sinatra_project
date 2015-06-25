@@ -4,10 +4,14 @@ get "/responder/add" do
 end
 
 get "/responder/save" do
+  @n = Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})
   
-  if Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})
+  
+  if @n 
+    
     @new = true
     erb :"responders/select_availability_form"
+    
   else
     @user = Responder.get_e_mail(params["e_mail"]).first 
     erb :"responders/edit_availability_form"
@@ -28,6 +32,11 @@ get "/responder/e_mail_save" do
 
   @responder_edit = true  
   erb :"responders/responder_saved"
+
+end
+
+get "/user_availability/save" do
+  put all the id's in the available times table'
 
 end
 

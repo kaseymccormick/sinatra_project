@@ -3,7 +3,7 @@
 <li>click checkboxes by days that you're <b>available</b> to attend 
 <li>Click checkboxes by <b>all</b> timeslots that you're available </li>
 </ol>
-<form action="user_availability/save"
+<form action="/user_availability/save"
   
   <% Day.all.each do |dates|%>
   <br><input type="checkbox" name="days_id[]" value="<%=dates.id%>" > <%=dates.date %>
@@ -15,6 +15,6 @@
           
       </fieldset>  
    <% end %>
-
+  <input type="hidden" name="responders_id" value="<%= @n.id %>">
   <input type="submit" value="Submit">
 </form>
