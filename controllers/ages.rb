@@ -4,16 +4,13 @@ end
 
 get '/age/save' do
   
-  # frame = TimeFrame.find(params["id"].to_i)
-  # new_range = params["range"]
-  # frame.range = new_range
-  # frame.save
+
   Age.add(params)
 
  
-  @new_group = true  
+  @new_range = true  
   #update the database then send them to
-  erb :"days/add_age_range_form"
+  erb :"ages/add_age_range_form"
   #so it acts like just reloaded page
 end
 

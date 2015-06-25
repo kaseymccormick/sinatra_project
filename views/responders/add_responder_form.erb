@@ -4,7 +4,11 @@
   <input type="text" placeholder="xxyz@yahoo.com" name="e_mail"></br></br>
            
   <label for="age_id">your age range</label>
-  <input type="age_id" placeholder="2" name="age_id"></br></br>
+  <select name="age_id">
+    <% Age.all.each do |ages| %>
+       <option value= "<%= ages.id %>" ><%= ages.range %> </option>
+    <% end %>
+  </select>
     
   <input type="submit">
 </form>

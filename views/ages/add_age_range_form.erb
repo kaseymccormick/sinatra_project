@@ -1,16 +1,16 @@
-<% if @new_age_group %>
-<h3>New age group has been added</h3>
+<% if @new_age_range %>
+<h3>New age range has been added</h3>
 <% end %>
-<h3>Adding a age group</h3>
+<h3>Adding a age range</h3>
   <ul>the current age groups are:
-    <% Age.all.each do |groups| %>
-       <li> ID <%= groups.id %> – <%= groups.date %> </li>
+    <% Age.all.each do |age| %>
+       <li> ID <%= age.id %> – <%= age.range %> </li>
     <% end %>
   </ul>
     
 <form action="/age/save"> 
-    <label for="group">New age group:</label> 
-      <input type="text" placeholder="21-55" name="group">
+    <label for="range">New age range:</label> 
+      <input type="text" placeholder="21-55" name="range">
     <input type="submit">
 </form>
 <a href="/home">home</a>
