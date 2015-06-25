@@ -4,10 +4,10 @@ get '/timeframes/add' do
 end
 
 get '/timeframes/save' do
-  binding.pry
+  
   frame = TimeFrame.find(params["id"].to_i)
-  frame.range = params["range"]
-  binding.pry
+  new_range = params["range"]
+  frame.range = new_range
   frame.save
 
   @new_timeframe = true  
