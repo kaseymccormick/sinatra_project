@@ -7,7 +7,7 @@ get "/responder/save" do
   
   if Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})
     @new = true
-    erb :"responders/responder_saved"
+    erb :"responders/select_availability_form"
   else
     @user = Responder.get_e_mail(params["e_mail"]).first 
     erb :"responders/edit_availability_form"
