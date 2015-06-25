@@ -73,7 +73,3 @@ class Responder
   end
     
 end
-
-
-
-end
