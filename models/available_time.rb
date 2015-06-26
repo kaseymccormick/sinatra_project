@@ -37,14 +37,14 @@ class AvailableTime
   def self.list_responders(timeframes_id, days_id)
    
       result = CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = '#{timeframes_id}' AND days_id = '#{days_id}'")
-      binding.pry
+
       results_as_objects = []
-      binding.pry
+   
       result.each do |result|
         results_as_objects << AvailableTime.new({"responder_id" => result["responder_id"],}) 
         
       end
-      binding.pry
+ 
      
       #connect to db return all responders_id's where the timeframes_id is == self.most_timeframes and days_id is == self.most_days
   end

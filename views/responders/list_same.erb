@@ -3,7 +3,7 @@
     <p><b>Day:</b><%= Day.find(@date).date %></p>
       
     <p><b>Time range:</b><%= TimeFrame.find(@frame).range %></p>
-<%binding.pry%>
+
     <p><b>Responders with that availability</b><%=AvailableTime.list_responders(@frame, @date) %></p>
-<%binding.pry%>
+
     <a href="/home">home</a>
