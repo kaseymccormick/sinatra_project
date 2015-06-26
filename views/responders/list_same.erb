@@ -4,6 +4,14 @@
       
     <p><b>Time range:</b><%= TimeFrame.find(@frame).range %></p>
 
-    <p><b>Responders with that availability</b><%=@users %></p>
+    <ul><b>Responders with that availability</b>
+    
+      <% @users.each do |user| %>
+      <li>
+              <%= Responder.find(user["responders_id"]).e_mail %>
+      </li>
+      <% end %>
+  
+    </ul>
 
     <a href="/home">home</a>
