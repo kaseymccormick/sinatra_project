@@ -5,17 +5,20 @@ get "/user_availability/save" do
   erb :"responders/availability_table" 
 end
 
+get "/responders/availability" do
+  erb :"responders/availability_table"
+end
+
 #get "/user_availability/best" do
   # all users with the x date x time slot like songs
 #end
 
 get "/user_availability/best" do
+  @date = AvailableTime.most_days
+  @frame = AvailableTime.most_timeframes
   binding.pry
-  AvailableTime.most_days
-  binding.pry
-  "who the hell knows"
-  #erb :"responders/list_same"
-end
+  erb :"responders/list_same"
+end 
 
 
 
