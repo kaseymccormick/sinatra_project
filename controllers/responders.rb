@@ -7,7 +7,6 @@ get "/responder/save" do
  
   
   if @user = Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})    
-    binding.pry
     @new = true
     erb :"responders/select_availability_form"
     
@@ -35,8 +34,8 @@ get "/responder/e_mail_save" do
 end
 
 get "/user_availability/save" do
+  Responder.report_availability
   binding.pry
-  erb :"responders/responder_saved"
 end
 
 

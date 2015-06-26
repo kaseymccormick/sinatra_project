@@ -72,5 +72,10 @@ class Responder
   def self.exist?(e_mail)
     get_e_mail(e_mail).length > 0
   end
+      
+  def report_availability 
+    CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{params["slots"]["dates"][0]}, #{params["slots"]["dates"][1]["frames"][0]});")
+  
+  end
     
 end

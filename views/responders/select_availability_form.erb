@@ -5,16 +5,21 @@
 </ol>
 <form action="/user_availability/save"
   
-  <% Day.all.each do |dates|%>
-  <br><input type="checkbox" name="days_id[]" value="<%=dates.id%>" > <%=dates.date %>
+  <% Day.all.each do |day|%>
+  <br><input type="checkbox" name="slots[dates][]" value="<%=day.id%>" > <%=day.date %>
      <fieldset>
         
           <% TimeFrame.all.each do |frames| %>
-             </br><input type="checkbox" name="timeframes_id[]" value="<%= frames.id %>" > <%= frames.range %> 
+             </br><input type="checkbox" name="slots[dates][][frames][]" value="<%= frames.id %>" > <%= frames.range %>
           <% end %>
           
       </fieldset>  
    <% end %>
-  <input type="hidden" name= "responders_id" value="<% @user.id %>">
+  <input type="hidden" name= "responders_id" value="<%=@user.id %>">
   <input type="submit" value="Submit">
 </form>
+
+<!--save returns {"slots"=>{"dates"=>["1", {"frames"=>["1", "2"]}, "2", {"frames"=>["4"]}]} 
+["slots"]["dates"][1]["frames"]
+=> ["1", "2"]
+-->
