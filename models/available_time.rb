@@ -19,8 +19,20 @@ class AvailableTime
   end
   
   #figuring out how to insert into table currently only able to do the first day first timeframe. need to loop through arrays somehow
+  # def loop_answers
+  #   continents.each_value do |continent|
+  #      46:     puts continent
+  #      47: end
+  # end
+  
   def collect_availability 
-    binding.pry
+      # array.length.times do |i|
+   #    end
+   #
+   #    timeframe_id = params["slots"]["dates"].length.times do
+   #    binding.pry
+   #    CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{timeframe_id}, #{params["slots"]["dates"][1]["frames"][0]});")
+   # #original
     CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{params["slots"]["dates"][0]}, #{params["slots"]["dates"][1]["frames"][0]});")
     binding.pry
   end
