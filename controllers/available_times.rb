@@ -1,6 +1,7 @@
 get "/user_availability/save" do
   binding.pry
-  CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{params["slots"]["dates"][1]["frames"][0]}, #{params["slots"]["dates"][0]});")
+  AvailableTime.send_availability(params)
+  #need to AvailableTime.send_availability(params["responder_id"], value_x, value_y)
   binding.pry
   erb :"responders/availability_table" 
 end

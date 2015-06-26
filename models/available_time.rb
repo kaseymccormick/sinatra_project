@@ -25,9 +25,13 @@ class AvailableTime
   #      47: end
   # end
   
-  def collect_availability 
+  
+  def self.send_availability (params)
       # array.length.times do |i|
    #    end
+   # take array whatever each  do x
+ #   put x
+ # end
    #
    #    timeframe_id = params["slots"]["dates"].length.times do
    #    binding.pry
