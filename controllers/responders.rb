@@ -33,10 +33,6 @@ get "/responder/e_mail_save" do
 
 end
 
-get "/user_availability/save" do
-  
-  CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{params["slots"]["dates"][0]}, #{params["slots"]["dates"][1]["frames"][0]});")
-  erb :"responders/availability_table" 
-end
+
 
 
