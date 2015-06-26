@@ -1,0 +1,10 @@
+<h3>Your availabiltiy has been saved</h3>
+     <ul>
+       <li>responder_id timeframes_id days_id</li>
+      <% AvailableTime.all.each do |slot| %>
+         <li> <%= slot.responders_id %> – <%= slot.timeframes_id %> – <%= slot.days_id %>  </li>
+      <% end %>
+    </ul>
+    
+    <a href="/home">home</a>
+    

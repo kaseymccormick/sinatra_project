@@ -11,6 +11,7 @@ require_relative "models/responder.rb"
 require_relative "models/timeframe.rb"
 require_relative "models/day.rb"
 require_relative "models/age.rb"
+require_relative "models/available_time.rb"
 
 #controllers
 require_relative "controllers/main.rb"
