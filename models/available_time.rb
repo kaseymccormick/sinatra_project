@@ -27,27 +27,21 @@ class AvailableTime
 
   
   def self.most_days 
-    CONNECTION.execute("SELECT days_id, COUNT(days_id) FROM available_times GROUP BY days_id LIMIT 1;").first["days_id"]
+    CONNECTION.execute("SELECT days_id, COUNT(days_id) FROM available_times GROUP BY days_id ORDER BY COUNT(days_id) DESC LIMIT 1;").first["days_id"]
   end
 
   def self.most_timeframes
-    CONNECTION.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id LIMIT 1;").first["timeframes_id"]
+    CONNECTION.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id ORDER BY COUNT(timeframes_id) DESC LIMIT 1;").first["timeframes_id"]
   end    
   
+  #
+  #
+  #Should returns hash
   def self.list_responders(timeframes_id, days_id)
-   
-      result = CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = '#{timeframes_id}' AND days_id = '#{days_id}'")
-
-      results_as_objects = []
-   
-      result.each do |result|
-        results_as_objects << AvailableTime.new({"responder_id" => result["responder_id"],}) 
-        
-      end
- 
-     
-      #connect to db return all responders_id's where the timeframes_id is == self.most_timeframes and days_id is == self.most_days
+     CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = '#{timeframes_id}' AND days_id = '#{days_id}';")
   end
+  
+  
   # may not use this method..
   def save
     string = "UPDATE ages SET range = '#{@range}' WHERE id = #{@id};"
