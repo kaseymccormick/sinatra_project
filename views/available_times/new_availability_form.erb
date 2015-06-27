@@ -1,0 +1,25 @@
+<h3>let's collect you're availability</h3>
+<ol>
+<li>click checkboxes by days that you're <b>available</b> to attend 
+<li>Click checkboxes by <b>all</b> timeslots that you're available </li>
+</ol>
+<form action="/user_availability/save"
+  
+  <% Day.all.each do |day|%>
+  <br><input type="checkbox" name="slots[dates][]" value="<%=day.id%>" > <%=day.date %>
+     <fieldset>
+        
+          <% TimeFrame.all.each do |frames| %>
+             </br><input type="checkbox" name="slots[dates][][frames][]" value="<%= frames.id %>" > <%= frames.range %>
+          <% end %>
+          
+      </fieldset>  
+   <% end %>
+  <input type="hidden" name= "responders_id" value="<%=@user_id %>">
+  <input type="submit" value="Submit">
+</form>
+
+<!--save returns {"slots"=>{"dates"=>["1", {"frames"=>["1", "2"]}, "2", {"frames"=>["4"]}]} 
+["slots"]["dates"][1]["frames"]
+=> ["1", "2"]
+-->
