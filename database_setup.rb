@@ -2,7 +2,7 @@
 CONNECTION = SQLite3::Database.new("availability_overlap.db")
 
 # Make the tables.
-CONNECTION.execute("CREATE TABLE IF NOT EXISTS responders (id INTEGER PRIMARY KEY, e_mail TEXT, age_id INTEGER);")
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS responders (id INTEGER PRIMARY KEY, name TEXT,e_mail TEXT, age_id INTEGER);")
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS ages (id INTEGER PRIMARY KEY, range TEXT);")
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS time_frames (id INTEGER PRIMARY KEY, range TEXT);")
 CONNECTION.execute("CREATE TABLE IF NOT EXISTS days (id INTEGER PRIMARY KEY, date TEXT);")

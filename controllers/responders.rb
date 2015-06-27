@@ -6,7 +6,7 @@ end
 get "/responder/save" do
  
   
-  if @user = Responder.add({"e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})    
+  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})    
     @new = true
     erb :"responders/select_availability_form"
     

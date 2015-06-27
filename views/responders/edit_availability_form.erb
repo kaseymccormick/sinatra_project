@@ -12,5 +12,10 @@
   <input type="submit" value="update">  
 </form>
     
-<h3>availability</h3>
-<p>coming soon!</p>
+<h3><%= @student.name %>'availability</h3>
+
+<ul>
+  <% @voted_on_questions.each do |question| %>
+    <li><%= question["content"] %></li>
+  <% end %>
+</ul>

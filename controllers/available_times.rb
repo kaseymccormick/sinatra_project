@@ -19,23 +19,6 @@ get "/user_availability/save" do
       AvailableTime.send_availability(params["responders_id"], day, time)
     end
   end
-  
-  
-  # slots = {}
-  #
-  # (0...array_of_answers.length).step(2).each do |index|
-  #       #
-    #
-    # value_x = array_of_answers[index]
-    # value_z = ((value_x.to_i) +1)
-    #
-    #
-    # (0...params["slots"]["dates"][value_x.to_i+1]["frames"].length).step(2).each do |index|
-    #   value_y = params["slots"]["dates"][(value_x.to_i+1)]["frames"][index]
-    #     AvailableTime.send_availability(params, value_x, value_y)
-    # end
-  # end
-
   erb :"responders/availability_table"
 end
 

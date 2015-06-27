@@ -1,12 +1,14 @@
 <h1>Ollo!</h1>
 <p>you've been given this link to take a poll on you're availability for an event.</p>
-<h3>choose an action</h3>
-  <ul>
-    <li><a href="/responder/add">add my information</a></li></br>
-    <li><a href="/responder/list">view a list of responders</li></br>
-    <li><a href="/days/edit">add days to poll for </li></br>
-    <li><a href="/timeframes/add">add time Time Frames </li></br>
-    <li><a href="/age/edit">add age groups</li></br>
-    <li><a href="/user_availability/best">best day and time range</li></br>
-    <li><a href="responders/availability">availability response table</li></br>
-  </ul>
+
+<form action="/responder/save">
+  <h3>Please enter the following information</h3>
+  <label for="name">Name:</label>
+  <input type="text" placeholder="Frodo Baggins" name="name"></br></br>
+  
+  <label for="e_mail">e-mail address:</label>
+  <input type="text" placeholder="xxyz@yahoo.com" name="e_mail"></br></br>
+  <input type="submit">
+</form>
+
+<a href="/admin_choices">Admin</a>
