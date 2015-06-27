@@ -36,13 +36,13 @@ get "/user_availability/best" do
   @date = AvailableTime.most_days
   @frame = AvailableTime.most_timeframes
   @users = AvailableTime.list_responders(@frame, @date)
-  binding.pry
   erb :"responders/best_availability"
 end 
 
 get '/responder/delete_availability' do
-  AvailableTime.delete_all(params["responders_id"].to_i)
-  erb :"responders/select_availability_form"
+  @user_id = params["responders_id"].to_i  
+  AvailableTime.delete_all(@user_id)
+  erb :"/available_times/new_availability_form"
 end
 
 

@@ -74,8 +74,9 @@ class AvailableTime
       
   end
   
-  def delete_all(id) 
-    CONNECTION.execute("DELETE * FROM available_times WHERE id = #{id}")
+  def self.delete_all(id) 
+    string = "DELETE FROM available_times WHERE responders_id = #{id}"
+    CONNECTION.execute(string)
   end
   
   # may not use this method..

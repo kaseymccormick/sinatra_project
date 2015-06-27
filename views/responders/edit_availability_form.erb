@@ -1,8 +1,9 @@
-<h2>You've already been a responder to this poll</h2>
+<h2>Hi <%= Responder.find(@user.id).name %> </h2>
 
-<p> you can only edit items from here. </p>
+<p>We already have you as responded.You're welcome to edit the following: </p>
 
-<h3>You're welcome to edit the following:</h3>
+<b>Email on file</b>
+
 <form action ="/responder/e_mail_save">
   <label for="e_mail">e-mail on file is:</label>
   <input type="text" placeholder="bleh@aol.com" name="e_mail" value="<%= params["e_mail"] %>"</br>
@@ -12,21 +13,21 @@
   <input type="submit" value="update">  
 </form>
     
-<h3>Your availability</h3>
+<b>Availability on file</b>
 
      <table>
        <tr style="font-weight:bold;">
-         <td>responder_id</td> 
-         <td>timeframes_id</td> 
-         <td>days_id</td>
+         <td>Day</td>
+         <td>time slot <td> 
+     
        </tr>
        
       <% @user_availability.each do |slot| %>
 
       <tr>
-         <td> <%= slot.responders_id %></td>
-         <td> <%= slot.timeframes_id %></td>
-         <td> <%= slot.days_id %></td>
+         <td> <%= Day.find(slot.days_id).date %></td>
+         <td> <%= TimeFrame.find(slot.timeframes_id).range %></td>
+         
       </tr>
       <% end %>
       
@@ -36,6 +37,7 @@
       <form action="demo_form.asp"  style="display:inline;">
         <button type="submit" formaction="delete_availability" >Create New Availability</button>
           <input type="hidden" name="responders_id" value="<%= @user.id %>">
+          
       </form>
       <em>deletes the current availability and allow you to create a new one</em>
       
