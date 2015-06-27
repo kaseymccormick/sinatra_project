@@ -9,11 +9,12 @@ class Responder
   include DatabaseInstanceMethods
   
   attr_reader :id
-  attr_accessor :e_mail, :age_id
+  attr_accessor :e_mail, :age_id, :name
   
   #initalize a new responder object
   def initialize(options={})
     @id = options["id"].to_i
+    @name = options["name"]
     @e_mail = options["e_mail"]
     @age_id = options['age_id']
   end

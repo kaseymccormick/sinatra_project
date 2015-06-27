@@ -19,10 +19,12 @@ get "/user_availability/save" do
       AvailableTime.send_availability(params["responders_id"], day, time)
     end
   end
+  @added = true
   erb :"responders/availability_table"
 end
 
 get "/responders/availability" do
+  @complete_list = true
   erb :"responders/availability_table"
 end
 

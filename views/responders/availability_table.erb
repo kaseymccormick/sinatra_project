@@ -1,4 +1,9 @@
+<% if @added %>
 <h3>Your availabiltiy has been added</h3>
+<% end %>
+<% if @complete_list%>
+<h3>The complete availability table</h3>
+<% end %>
      <ul>
        <li>responder_id timeframes_id days_id</li>
       <% AvailableTime.all.each do |slot| %>

@@ -6,11 +6,21 @@
 <p>Email has been updated</p>
 <% end %>
 
-<ul>
-  <li>Id e-mail age_id</li>
-  <% Responder.all.each do |responder| %>
-  <li> ID<%= responder.id %> – <%= responder.e_mail %> – <%= responder.age_id %> </li>
-  <% end %>
-</ul>
 
-<a href="/home">home</a>
+<table>
+  <tr style="font-weight:bold;">
+    <b><td>Id</td> <td>name</td> <td>e-mail</td> <td>age_id</td>
+  </tr>
+  <% Responder.all.each do |responder| %>
+  <tr> 
+    <td><%= responder.id %> </td> 
+    <td><%= responder.name %>  </td>
+    <td><%= responder.e_mail %></td>
+    <td><%= responder.age_id %> </td>
+  </tr>
+  <% end %>
+</table>
+
+</br>
+<a href="/home">Home</a>
+<a href="/admin_choices">Admin</a>
