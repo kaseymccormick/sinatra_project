@@ -50,6 +50,34 @@ class AvailableTime
   end
   
   
+  #find a row by id and return objects
+  #
+  #find - id ->integer
+  #
+  #returns object of id's row
+  def self.find_all_of(id)
+    # Figure out the table's name from the class we're calling the method on.
+    table_name    = self.to_s.pluralize.underscore
+
+    results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE responders_id = #{id}")
+    
+    if results.empty?
+      return []
+    else
+      bundle =[]
+        results.each do |row|
+        bundle.push(self.new(row)) 
+        end
+        
+        return bundle
+    end
+      
+  end
+  
+  def delete_all(id) 
+    CONNECTION.execute("DELETE * FROM available_times WHERE id = #{id}")
+  end
+  
   # may not use this method..
   def save
     string = "UPDATE ages SET range = '#{@range}' WHERE id = #{@id};"
