@@ -1,9 +1,42 @@
 get "/user_availability/save" do
-  binding.pry
-  AvailableTime.send_availability(params)
-  #need to AvailableTime.send_availability(params["responder_id"], value_x, value_y)
-  binding.pry
-  erb :"responders/availability_table" 
+  array_of_answers = params["slots"]["dates"]
+  
+  days = []
+  times = []
+  
+  array_of_answers.each_with_index do |x, i|
+    if i.even?
+      days << x
+    else  
+      times << x["frames"]
+    end  
+  end  
+  
+  hash_of_answers = Hash[days.zip(times)]
+  
+  hash_of_answers.each do |day, times|
+    times.each do |time|
+      AvailableTime.send_availability(params["responders_id"], day, time)
+    end
+  end
+  
+  
+  # slots = {}
+  #
+  # (0...array_of_answers.length).step(2).each do |index|
+  #       #
+    #
+    # value_x = array_of_answers[index]
+    # value_z = ((value_x.to_i) +1)
+    #
+    #
+    # (0...params["slots"]["dates"][value_x.to_i+1]["frames"].length).step(2).each do |index|
+    #   value_y = params["slots"]["dates"][(value_x.to_i+1)]["frames"][index]
+    #     AvailableTime.send_availability(params, value_x, value_y)
+    # end
+  # end
+
+  erb :"responders/availability_table"
 end
 
 get "/responders/availability" do

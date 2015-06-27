@@ -26,19 +26,11 @@ class AvailableTime
   # end
   
   
-  def self.send_availability (params)
-      # array.length.times do |i|
-   #    end
-   # take array whatever each  do x
- #   put x
- # end
-   #
-   #    timeframe_id = params["slots"]["dates"].length.times do
-   #    binding.pry
-   #    CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{timeframe_id}, #{params["slots"]["dates"][1]["frames"][0]});")
-   # #original
-    CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES ('#{params["responders_id"]}', #{params["slots"]["dates"][0]}, #{params["slots"]["dates"][1]["frames"][0]});")
-    binding.pry
+  def self.send_availability(responders_id, timeframes_id, days_id)
+   string = "INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES (#{responders_id}, #{timeframes_id}, #{days_id});"
+  
+    
+    CONNECTION.execute(string)
   end
 
   
