@@ -39,14 +39,14 @@ class AvailableTime
   end
 
   def self.most_timeframes(day_id)
-    CONNECTION.execute("SELECT timeframes_id WHERE days_id = '#{day_id}' COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id ORDER BY COUNT(timeframes_id) DESC LIMIT 1;").first["timeframes_id"]
+    CONNECTION.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id HAVING days_id = #{day_id} ORDER BY COUNT(timeframes_id);").first["timeframes_id"] 
   end    
   
   #
   #
   #Should returns hash
   def self.list_responders(timeframes_id, days_id)
-     CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = '#{timeframes_id}' AND days_id = '#{days_id}';")
+     CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
   end
   
   

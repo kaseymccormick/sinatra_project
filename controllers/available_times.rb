@@ -3,22 +3,24 @@ get "/user_availability/save" do
   
   days = []
   times = []
-  
+
   array_of_answers.each_with_index do |x, i|
     if i.even?
       days << x
     else  
       times << x["frames"]
     end  
+    
   end  
   
   hash_of_answers = Hash[days.zip(times)]
   
   hash_of_answers.each do |day, times|
     times.each do |time|
-      AvailableTime.send_availability(params["responders_id"], day, time)
+      AvailableTime.send_availability(params["responders_id"], time, day)
     end
   end
+  
   @added = true
   erb :"responders/availability_table"
 end
