@@ -9,16 +9,16 @@ class TimeFrame
   include DatabaseInstanceMethods
   
   attr_reader :id 
-  attr_accessor :range
+  attr_accessor :slot
   
   #initalize a new responder object
   def initialize(options={})
     @id = options["id"].to_i
-    @range = options["range"]
+    @slot = options["slot"]
   end
   
   def save
-    string = "UPDATE timeframes SET range = '#{@range}' WHERE id = #{@id};"
+    string = "UPDATE timeframes SET slot = '#{@slot}' WHERE id = #{@id};"
     CONNECTION.execute(string)
   end
 end

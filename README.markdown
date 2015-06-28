@@ -11,7 +11,7 @@ The PIP (Person Initiating Poll) is the admin user who creates a poll that is se
 
 **timeframes**
 - id -> integer
-- range -> string
+- slot -> string
 
 **available_times**
 - responders_id -> integer

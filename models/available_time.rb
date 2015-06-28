@@ -38,8 +38,8 @@ class AvailableTime
     CONNECTION.execute("SELECT days_id, COUNT(days_id) FROM available_times GROUP BY days_id ORDER BY COUNT(days_id) DESC LIMIT 1;").first["days_id"]
   end
 
-  def self.most_timeframes
-    CONNECTION.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id ORDER BY COUNT(timeframes_id) DESC LIMIT 1;").first["timeframes_id"]
+  def self.most_timeframes(day_id)
+    CONNECTION.execute("SELECT timeframes_id WHERE days_id = '#{day_id}' COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id ORDER BY COUNT(timeframes_id) DESC LIMIT 1;").first["timeframes_id"]
   end    
   
   #
@@ -81,8 +81,9 @@ class AvailableTime
   
   # may not use this method..
   def save
-    string = "UPDATE ages SET range = '#{@range}' WHERE id = #{@id};"
+    string = "UPDATE ages SET slot = '#{@slot}' WHERE id = #{@id};"
     CONNECTION.execute(string)
   end
 end
+
 

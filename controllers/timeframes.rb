@@ -4,11 +4,7 @@ get '/timeframes/add' do
 end
 
 get '/timeframes/save' do
-  
-  # frame = TimeFrame.find(params["id"].to_i)
-  # new_range = params["range"]
-  # frame.range = new_range
-  # frame.save
+
   TimeFrame.add(params)
 
  

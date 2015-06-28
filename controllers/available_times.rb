@@ -34,7 +34,8 @@ end
 
 get "/user_availability/best" do
   @date = AvailableTime.most_days
-  @frame = AvailableTime.most_timeframes
+  @frame = AvailableTime.most_timeframes(@date)
+  binding.pry
   @users = AvailableTime.list_responders(@frame, @date)
   erb :"responders/best_availability"
 end 

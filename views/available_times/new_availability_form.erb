@@ -10,7 +10,7 @@
      <fieldset>
         
           <% TimeFrame.all.each do |frames| %>
-             </br><input type="checkbox" name="slots[dates][][frames][]" value="<%= frames.id %>" > <%= frames.range %>
+             </br><input type="checkbox" name="slots[dates][][frames][]" value="<%= frames.id %>" > <%= frames.slot %>
           <% end %>
           
       </fieldset>  
