@@ -17,9 +17,13 @@ class Age
     @range = options["range"]
   end
   
-  # may not use this method..
-  def save
-    string = "UPDATE ages SET range = '#{@range}' WHERE id = #{@id};"
-    CONNECTION.execute(string)
+  # currently not using this method
+  # update one row via id information
+  #
+  #save - intiger
+  #
+  #returns array
+  def save(id)
+    CONNECTION.execute("UPDATE ages SET range = '#{@range}' WHERE id = #{@id};")
   end
 end

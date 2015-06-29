@@ -17,6 +17,11 @@ class TimeFrame
     @slot = options["slot"]
   end
   
+  #update a row in the table via table id
+  #
+  #save - integer
+  #
+  #returns array of hash
   def save
     string = "UPDATE timeframes SET slot = '#{@slot}' WHERE id = #{@id};"
     CONNECTION.execute(string)

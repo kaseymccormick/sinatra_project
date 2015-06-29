@@ -59,10 +59,14 @@ class Responder
     return results_as_objects   
   
   end
-    
+  
+  #update a row in the table via table id
+  #
+  #save - integer
+  #
+  #returns array of hash  
   def save
-    string = "UPDATE responders SET e_mail = '#{@e_mail}', age_id = #{@age_id} WHERE id = #{@id};"
-    CONNECTION.execute(string)
+    CONNECTION.execute("UPDATE responders SET e_mail = '#{@e_mail}', age_id = #{@age_id} WHERE id = #{@id};")
   end
     
   #verify it's not a duplicate

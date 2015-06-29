@@ -17,9 +17,13 @@ class Day
     @date = options["date"]
   end
   
-  # may not use this method..
+  # may not currently using this method
+  # update 1 row given the id
+  #
+  #save - intiger
+  #
+  #return array
   def save
-    string = "UPDATE timeframes SET date = '#{@date}' WHERE id = #{@id};"
-    CONNECTION.execute(string)
+    CONNECTION.execute("UPDATE timeframes SET date = '#{@date}' WHERE id = #{@id};")
   end
 end
