@@ -24,6 +24,6 @@ class Day
   #
   #return array
   def save
-    CONNECTION.execute("UPDATE timeframes SET date = '#{@date}' WHERE id = #{@id};")
+    CONNECTION.execute("UPDATE days SET date = '#{@date}' WHERE id = #{@id};")
   end
 end

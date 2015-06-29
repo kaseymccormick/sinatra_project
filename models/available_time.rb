@@ -65,7 +65,7 @@ class AvailableTime
     # Figure out the table's name from the class we're calling the method on.
     table_name    = self.to_s.pluralize.underscore
 
-    results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE responders_id = #{id}")
+    results = CONNECTION.execute("SELECT * FROM available_times WHERE responders_id = #{id}")
     
     if results.empty?
       return []
@@ -86,7 +86,7 @@ class AvailableTime
   
   # may not use this method..
   def save
-    CONNECTION.execute("UPDATE ages SET slot = '#{@slot}' WHERE id = #{@id};")
+    CONNECTION.execute("UPDATE available_times SET day_id = #{@day}, timeframes_id = #{@timeframes} WHERE responders_id = #{@id};")
   end
 end
 
