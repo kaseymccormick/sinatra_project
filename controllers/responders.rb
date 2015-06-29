@@ -8,12 +8,12 @@ get "/responder/save" do
   if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})    
 
     @new = true
-    erb :"responders/select_availability_form"
+    erb :"available_times/select_availability_form"
     
   else
     @user = Responder.get_e_mail(params["e_mail"]).first 
     @user_availability = AvailableTime.find_all_of(@user.id)
-    erb :"responders/edit_availability_form"
+    erb :"available_times/edit_availability_form"
   end
   
 end

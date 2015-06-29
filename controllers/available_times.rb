@@ -22,24 +22,20 @@ get "/user_availability/save" do
   end
   
   @added = true
-  erb :"responders/availability_table"
+  erb :"available_times/availability_table"
 end
 
 get "/responders/availability" do
   @complete_list = true
-  erb :"responders/availability_table"
+  erb :"available_times/availability_table"
 end
-
-#get "/user_availability/best" do
-  # all users with the x date x time slot like songs
-#end
 
 get "/user_availability/best" do
   @date = AvailableTime.most_days
   @frame = AvailableTime.most_timeframes(@date)
   binding.pry
   @users = AvailableTime.list_responders(@frame, @date)
-  erb :"responders/best_availability"
+  erb :"available_times/best_availability"
 end 
 
 get '/responder/delete_availability' do
