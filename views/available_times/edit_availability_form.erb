@@ -15,34 +15,34 @@
     
 <b>Availability on file</b>
 
-     <table>
-       <tr style="font-weight:bold;">
-         <td>Day</td>
-         <td>time slot <td> 
+<table>
+  <tr style="font-weight:bold;">
+    <td>Day</td>
+    <td>time slot <td> 
      
-       </tr>
+    </tr>
        
-      <% @user_availability.each do |slot| %>
+    <% @user_availability.each do |slot| %>
 
-      <tr>
-         <td> <%= Day.find(slot.days_id).date %></td>
-         <td> <%= TimeFrame.find(slot.timeframes_id).slot %></td>
+    <tr>
+      <td> <%= Day.find(slot.days_id).date %></td>
+      <td> <%= TimeFrame.find(slot.timeframes_id).slot %></td>
          
-      </tr>
-      <% end %>
+    </tr>
+    <% end %>
       
-    </table>
+  </table>
     
-   </br>
-      <form action="demo_form.asp"  style="display:inline;">
-        <button type="submit" formaction="delete_availability" >Create New Availability</button>
-          <input type="hidden" name="responders_id" value="<%= @user.id %>">
+</br>
+<form action="demo_form.asp"  style="display:inline;">
+  <button type="submit" formaction="delete_availability" >Create New Availability</button>
+  <input type="hidden" name="responders_id" value="<%= @user.id %>">
           
-      </form>
-      <em>deletes the current availability and allow you to create a new one</em>
+</form>
+<em>deletes the current availability and allow you to create a new one</em>
       
       
-  </br>
-    </br>
-    <a href="/home">Home</a>
-    <a href="/admin_choices">Admin</a>
+</br>
+</br>
+<a href="/home">Home</a>
+<a href="/admin_choices">Admin</a>

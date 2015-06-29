@@ -5,7 +5,7 @@ end
 get '/days/save' do
   Day.add(params) 
   @new_day = true
-    erb :"/days/edit_days_form"
+  erb :"/days/edit_days_form"
 end
 get '/days/delete' do
   Day.delete(params["id"])  

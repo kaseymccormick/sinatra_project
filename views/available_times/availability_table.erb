@@ -4,24 +4,24 @@
 <% if @complete_list%>
 <h3>The complete availability table</h3>
 <% end %>
-     <table>
-       <tr style="font-weight:bold;">
-         <td>responder_id</td> 
-         <td>timeframes_id</td> 
-         <td>days_id</td>
-       </tr>
+<table>
+  <tr style="font-weight:bold;">
+    <td>responder_id</td> 
+    <td>timeframes_id</td> 
+    <td>days_id</td>
+  </tr>
        
-      <% AvailableTime.all.each do |slot| %>
-      <tr>
-         <td> <%= slot.responders_id %></td>
-         <td> <%= slot.timeframes_id %></td>
-         <td> <%= slot.days_id %></td>
-      </tr>
-      <% end %>
+  <% AvailableTime.all.each do |slot| %>
+  <tr>
+    <td> <%= slot.responders_id %></td>
+    <td> <%= slot.timeframes_id %></td>
+    <td> <%= slot.days_id %></td>
+  </tr>
+  <% end %>
       
-    </table>
+</table>
     
 
     
-    <a href="/home">home</a>
+<a href="/home">home</a>
     

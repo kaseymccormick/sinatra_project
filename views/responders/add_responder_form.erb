@@ -6,7 +6,7 @@
   <label for="age_id">your age range</label>
   <select name="age_id">
     <% Age.all.each do |ages| %>
-       <option value= "<%= ages.id %>" ><%= ages.range %> </option>
+    <option value= "<%= ages.id %>" ><%= ages.range %> </option>
     <% end %>
   </select>
     

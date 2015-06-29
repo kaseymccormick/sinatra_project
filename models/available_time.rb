@@ -52,7 +52,7 @@ class AvailableTime
   #
   #Should returns an array of hashes
   def self.list_responders(timeframes_id, days_id)
-     CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
+    CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
   end
   
   
@@ -71,11 +71,11 @@ class AvailableTime
       return []
     else
       bundle =[]
-        results.each do |row|
+      results.each do |row|
         bundle.push(self.new(row)) 
-        end
+      end
         
-        return bundle
+      return bundle
     end
       
   end

@@ -1,16 +1,16 @@
 <h3>the best availability currently is</h3>
 
-    <p><b>Day:</b><%= Day.find(@date).date %></p>
-    <p><b>Time slot:</b><%= TimeFrame.find(@frame).slot %></p>
+<p><b>Day:</b><%= Day.find(@date).date %></p>
+<p><b>Time slot:</b><%= TimeFrame.find(@frame).slot %></p>
 
-    <ul><b>Responders with that availability</b>
+<ul><b>Responders with that availability</b>
     
-      <% @users.each do |user| %>
-      <li>
-              <%= Responder.find(user["responders_id"]).name %>
-      </li>
-      <% end %>
+  <% @users.each do |user| %>
+  <li>
+    <%= Responder.find(user["responders_id"]).name %>
+  </li>
+  <% end %>
   
-    </ul>
+</ul>
 
 <a href="/admin_choices">Admin</a>

@@ -65,12 +65,12 @@ module DatabaseClassMethods
 
     results = CONNECTION.execute("SELECT * FROM #{table_name} WHERE id = #{id}")
      
-      if results.empty?
-        return nil
-      else
-        result_hash = results.first
-        self.new(result_hash)
-      end
+    if results.empty?
+      return nil
+    else
+      result_hash = results.first
+      self.new(result_hash)
+    end
       
   end
  

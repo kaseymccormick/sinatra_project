@@ -2,16 +2,16 @@
 <h3>New timeframe has been added</h3>
 <% end %>
 <h3>Adding a Timeframe</h3>
-  <ul>the current Timeframes are:
-    <% TimeFrame.all.each do |timeframe| %>
-       <li> ID <%= timeframe.id %> – <%= timeframe.slot %> </li>
-    <% end %>
-  </ul>
+<ul>the current Timeframes are:
+  <% TimeFrame.all.each do |timeframe| %>
+  <li> ID <%= timeframe.id %> – <%= timeframe.slot %> </li>
+  <% end %>
+</ul>
     
 <form action="/timeframes/save"> 
-    <label for="slot">New Timeframe slot:</label> 
-      <input type="text" placeholder="10:00AM - 12:01PM" name="slot">
-    <input type="submit">
+  <label for="slot">New Timeframe slot:</label> 
+  <input type="text" placeholder="10:00AM - 12:01PM" name="slot">
+  <input type="submit">
       
 </form>
 <a href="/admin_choices">Admin</a>
