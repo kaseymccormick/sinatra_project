@@ -4,6 +4,13 @@
     font-family: 'Quicksand', sans-serif;
     color:#739996;
   }
+  .hide{
+    display:none;
+  }
+  
+  .visible{
+    display:block;
+  }
   
   .top_bar{
     position: fixed;
@@ -58,6 +65,7 @@
   }
   #menu {
     margin-top: 85px;
+    
   }
   #menu li { 
     list-style: none;
