@@ -1,7 +1,8 @@
+<body>
 <% if @new_age_range %>
-<h3>New age range has been added</h3>
+<h1>New age range has been added</h1>
 <% end %>
-<h3>Adding a age range</h3>
+<h1>Adding a age range</h1>
 <ul>the current age groups are:
   <% Age.all.each do |age| %>
   <li> ID <%= age.id %> – <%= age.range %> </li>
@@ -13,4 +14,10 @@
   <input type="text" placeholder="21-55" name="range">
   <input type="submit">
 </form>
-<a href="/admin_choices">Admin</a>
+<form action="/age/delete">
+  <label for="id">please enter <b>one</b> id number of the age you'd like to delete. </label> 
+  <input type="text" placeholder="1" name="id">
+  <input type="submit">
+</form>
+
+</body>

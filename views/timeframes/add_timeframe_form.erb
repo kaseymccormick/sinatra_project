@@ -11,7 +11,11 @@
 <form action="/timeframes/save"> 
   <label for="slot">New Timeframe slot:</label> 
   <input type="text" placeholder="10:00AM - 12:01PM" name="slot">
+  <input type="submit">      
+</form>
+<form action="/timeframes/delete">
+  <label for="id">please enter <b>one</b> id number of the time slot you'd like to delete. </label> 
+  <input type="text" placeholder="1" name="id">
   <input type="submit">
-      
 </form>
 <a href="/admin_choices">Admin</a>
