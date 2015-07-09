@@ -1,24 +1,68 @@
 <!doctype html>
 <head>
   <link rel="stylesheet" type="text/css" href="/main.css">
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
+
   <title>YO</title>
+  
+  <div class="top_bar bahamaB">
+    <div id="logo">
+      <h1><span>Availability</span><em>Overlap</em></h1>
+    </div>
+    <div id="adminicon">
+      <img src="images/cog.png" alt="ambiguous sillhouette">
+    </div>
+  </div>
 
-<ul>
-  <li><a href="/responder/list">view a list of responders</a></li>
-  <li><a href="/days/edit">add days to poll for</a> </li>
-  <li><a href="/timeframes/add">add time Time Frames</a> </li>
-  <li><a href="/age/edit">add age groups</a></li>
-  <li><a href="/user_availability/best">best day and time slot</a></li>
-  <li><a href="responders/availability">availability response table</a></li>
-  <li><a href="/home">landing page</a></li>
-</ul>
-
+  <div id="menu">
+    <ul>
+      <li><a href="/responder/list" >view a list of responders</a></li>
+      <li><a href="/days/edit">add days to poll for</a> </li>
+      <li><a href="/timeframes/add">add time Time Frames</a> </li>
+      <li><a href="/age/edit">add age groups</a></li>
+      <li><a href="/user_availability/best">best day and time slot</a></li>
+      <li><a href="responders/availability">availability response table</a></li>
+      <li><a href="/home">landing page</a></li>
+    </ul>
+  </div>
+  
 </head>
 </header>
 <body>
-  <%=yield%>
+<%=yield%>
 </body>
 <footer>
-  <p>footer test</p>
+<div id="pallete">
+  <div id="white">
+    <p class="bahamaB"> bahama</p>
+    <p class="puddleB"> puddle</p>
+    <p class="martiniB"> martini</p>
+    <p class="flushB"> flush</p>
+    <p class="raveB"> rave</p>
+  </div>
+  <div id="black">
+    <p class="bahamaB"> bahama</p>
+    <p class="puddleB"> puddle</p>
+    <p class="martiniB"> martini</p>
+    <p class="flushB"> flush</p>
+    <p class="raveB"> rave</p>
+  </div>
+  <div id="text">
+    <p class="bahamaT"> bahama</p>
+    <p class="puddleT"> puddle</p>
+    <p class="martiniT"> martini</p>
+    <p class="flushT"> flush</p>
+    <p class="raveT"> rave</p>
+  </div>
+  <div id="textbold">
+    <p class="bahamaT"> bahama</p>
+    <p class="puddleT"> puddle</p>
+    <p class="martiniT"> martini</p>
+    <p class="flushT"> flush</p>
+    <p class="raveT"> rave</p>
+  </div>
+</div>
+ 
+<p>footer test</p>
 </footer>
 </html>
