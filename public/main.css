@@ -1,148 +1,230 @@
 /*  typeface treatments*/
-@media (max-width: 640px){
-  body{
-    font-family: 'Quicksand', sans-serif;
-    color:#739996;
-  }
-  .hide{
+body{
+  font-family: 'Quicksand', sans-serif;
+  color:#739996;
+}
+.screen{
+  background-color:#ccc;
+  width:100px;
+  height:100%;  
+}
+  
+form {
+  padding-left: 50px;
+}
+  
+.hide{
+  display:none;
+}
+  
+.visible{
+  display:block;
+}
+  
+.top_bar{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#logo{
+  float:left;
+}
+  
+#adminicon{
+  float:right;
+}
+  
+#adminicon img{
+   
+  width: 75%;
+  top: 20px;
+  margin-top: 8px;
+}
+  
+#intro {
+  width: 80%;
+  text-align: center;
+  margin-left: 42px;
+  border: 1px solid #78D080;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 3px 12px 8px #0066d4;
+  box-shadow: 1px 1px 6px .5px #739996;
+}
+
+#menu {
+  background-color: white;
+  z-index: 100;
+  position: absolute;
+  width: 75%;
+  left: 5%;
+  border: 1px solid #78D080;
+  border-radius: 10px;
+}
+  
+#intro p {
+  margin-top: 70px;
+  color:#78D080;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+  
+h1{
+  font-size:24px;
+  color:white;
+  margin-left:20px;
+  margin-top:20px;
+}
+
+h1 span{
+  font-weight:300;
+}
+ 
+h1 em{
+  font-style:normal;
+  font-weight:400;
+  color:;
+}
+ 
+h2{
+  
+}
+
+h3{
+  
+}
+
+footer{
+  /*    background-color:#ccc;*/
+  color:white;
+  font-size:9px;
+}
+
+#menu li { 
+  list-style: none;
+  padding: 20px 5px;
+  border: 1px solid #739996;
+  width: 90%;
+  margin-top: 11px;
+  text-align: center;
+}
+a{
+  text-decoration:none;
+  color:#739996;    
+}
+#pallete {
+  padding-top: 80px;
+}
+  
+#menu li:hover{
+  border: 3px solid #739996;
+}
+
+/*---color pallete stuff--*/
+#pallete p {
+  padding: 10px;
+  width: 12%;
+  float: left;
+  text-align: center;
+  font-size:12px;
+  margin:2px 4px;
+}
+  
+#textbold p{
+  font-weight:700;
+}
+/*---- color of background ---*/
+  
+.bahamaB{
+  background-color:#33ccc0;
+}
+
+.puddleB{
+  background-color:#739996;
+}
+.martiniB{
+  background-color:#78D080;
+}
+.flushB{
+  background-color:#ff998f;
+}
+.raveB{
+  background-color:#cc3389;
+}
+/*---- color of text ---*/
+.bahamaT{
+  color:#33ccc0;
+}
+
+.puddleT{
+  color:#739996;
+}
+.martiniT{
+  color:#78D080;
+}
+.flushT{
+  color:#ff998f;
+}
+.raveT{
+  color:#cc3389;
+}
+#pallete{
+  
+}
+#white{
+  color:white;
+}
+#black{
+  color:black;
+}
+#text{
+  
+}
+
+
+
+@media (min-width: 640px){
+  #adminicon img{
     display:none;
   }
   
-  .visible{
-    display:block;
-  }
-  
-  .top_bar{
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-  }
-  #logo{
-    float:left;
-  }
-  
-  #adminicon{
-    float:right;
-  }
-  
-  #adminicon img{
-   
-    width: 75%;
-    top: 20px;
-    margin-top: 8px;
-  }
-
-  h1{
-    font-size:24px;
-    color:white;
-    margin-left:20px;
-    margin-top:20px;
-  }
-
-  h1 span{
-    font-weight:300;
-  }
- 
-  h1 em{
-    font-style:normal;
-    font-weight:400;
-    color:;
-  }
- 
-  h2{
-  
-  }
-
-  h3{
-  
-  }
-
-  footer{
-    /*    background-color:#ccc;*/
-    color:white;
-    font-size:9px;
-  }
   #menu {
-    margin-top: 85px;
-    
-  }
-  #menu li { 
-    list-style: none;
-    padding: 20px 5px;
-    border: 1px solid #739996;
-    width: 90%;
-    margin-top: 11px;
-    text-align: center;
-  }
-    a{
-    text-decoration:none;
-    color:#739996;    
+    display: block;
+    background-color: none;
+    border: none;
+    background-color: transparent;
   }
   
-  #menu li:hover{
-    border: 3px solid #739996;
-  }
-
-  /*---color pallete stuff--*/
-  #pallete p {
-    padding: 10px;
-    width: 12%;
-    float: left;
-    text-align: center;
-    font-size:12px;
-    margin:2px 4px;
+  #menu li {
+    float:left;
+    width: 25%;
+    padding: 0px 0px;
+    border: none;
+    color: white;
   }
   
-  #textbold p{
-    font-weight:700;
-  }
-  /*---- color of background ---*/
-  
-  .bahamaB{
-    background-color:#33ccc0;
-  }
-
-  .puddleB{
-    background-color:#739996;
-  }
-  .martiniB{
-    background-color:#59ff94;
-  }
-  .flushB{
-    background-color:#ff998f;
-  }
-  .raveB{
-    background-color:#cc3389;
-  }
-  /*---- color of text ---*/
-  .bahamaT{
-    color:#33ccc0;
-  }
-
-  .puddleT{
-    color:#739996;
-  }
-  .martiniT{
-    color:#59ff94;
-  }
-  .flushT{
-    color:#ff998f;
-  }
-  .raveT{
-    color:#cc3389;
-  }
-  #pallete{
-  
-  }
-  #white{
+  a{
     color:white;
   }
-  #black{
-    color:black;
-  }
-  #text{
   
+  ul {
+    float: right;
+    position: relative;
+    right: -135px;
+    font-size: 14px;
+    top: -22px;
+    width: 65%;
+  }
+  #menu li:hover{
+    text-decoration:underline;
+    border: none;
+  }
+  #intro {
+    width: 80%;
+    text-align: center;
+    margin-left: 42px;
+
+  }
   }
 
 }
