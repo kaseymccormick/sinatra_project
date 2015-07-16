@@ -7,7 +7,7 @@ The PIP (Person Initiating Poll) is the admin user who creates a poll that is se
 **responders**
 - id -> integer
 - e_mail -> string
-- age_id -> integer
+- age_id -> integer REMOVED
 
 **timeframes**
 - id -> integer
@@ -18,7 +18,7 @@ The PIP (Person Initiating Poll) is the admin user who creates a poll that is se
 - timeframes_id -> integer
 - days_id (ONLY if I have time)
 
-**ages**
+**ages** REMOVED
 - id -> integer
 - range -> string
 

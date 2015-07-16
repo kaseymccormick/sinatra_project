@@ -9,14 +9,17 @@ class Responder
   include DatabaseInstanceMethods
   
   attr_reader :id
-  attr_accessor :e_mail, :age_id, :name
+  attr_accessor :e_mail, :age_id, :name, :password, :zipcode, :user_weight
   
   #initalize a new responder object
   def initialize(options={})
     @id = options["id"].to_i
     @name = options["name"]
     @e_mail = options["e_mail"]
-    @age_id = options['age_id']
+    @age_id = options["age_id"]
+    @password = options["password"]
+    @zipcode = options["zipcode"]
+    @user_weight =options["user_weight"]
   end
     
   #add new responder and verify not duplicate
@@ -28,8 +31,8 @@ class Responder
     #if the email is in the table it exists (true) if email doesnt exist = false if false add to the table
     
     if self.exist?(options["e_mail"]) == false
-    
-      CONNECTION.execute("INSERT INTO responders (name, e_mail, age_id) VALUES ('#{options["name"]}','#{options["e_mail"]}', #{options["age_id"]});")
+      binding.pry
+      CONNECTION.execute("INSERT INTO responders (name, e_mail, age_id, password, zipcode, user_weight) VALUES ('#{options["name"]}','#{options["e_mail"]}', #{options["age_id"]}, '#{options["password"]}', #{options["zipcode"]},  '#{options["user_weight"]}');")
 
       id = CONNECTION.last_insert_row_id
       options["id"] = id
@@ -78,6 +81,15 @@ class Responder
     get_e_mail(e_mail).length > 0
   end
       
-
+ def log_in_user(e_mail, password)
+   results = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = #{email} AND password = #{password}")
+   
+   if results.empty?
+     return false
+   else
+     result_hash = results.first
+     self.new(result_hash)
+   end
+ end
     
 end
