@@ -1,5 +1,5 @@
 <div id="intro">
-<p>you've been given this link to take a poll on you're availability for an event.</p>
+<p>you've been given this link to take a poll on your availability for an event.</p>
 </div>
 <form action="/responder/save">
  
@@ -10,14 +10,14 @@
   <label for="e_mail">e-mail address:</label>
   <input type="text" placeholder="xxyz@yahoo.com" name="e_mail"></br></br>
 
+  <label for="password">Password:</label>
+  <input type="text" name="password"></br></br>
   
-  <label for="age_id">your age range(used for age regulations of some locations)</label>
-  <select name="age_id">
-    <% Age.all.each do |ages| %>
-    <option value= "<%= ages.id %>" ><%= ages.range %> </option>
-    <% end %>
-  </select></br></br>
-  <input type="submit">
+  <label for="zipcode">Zip Code:</label>
+  <input type="number" name="zipcode" pattern=".{5,}" required title="5 numbers required" ></br></br>
 
+  <button type="submit">create profile</button>
+  <em>already a user?</em>
+<a href="/user/login">login</a>
 </form>
 

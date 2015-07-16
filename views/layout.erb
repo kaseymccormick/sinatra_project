@@ -13,8 +13,11 @@
       <img src="../images/cog.png" alt="ambiguous sillhouette">
     </div>
   </div>
-
+</head>
+<body>
+<header>
   <div id="menu">
+   
     <ul>
       <li><a href="/responder/list" >Responders</a></li>
       <li><a href="/days/edit">Days</a> </li>
@@ -25,15 +28,14 @@
       <li><a href="/home">Home</a></li>
     </ul>
   </div>
-
-</head>
 </header>
-<body>
+<div class="task">
 <%=yield%>
-<script src="global.js"></script
-</body>
+
+</div>
 <footer>
 <div id="pallete">
+ <h3 class="puddleT"> color pallet reference</h3>
   <div id="white">
     <p class="bahamaB"> bahama</p>
     <p class="puddleB"> puddle</p>
@@ -63,7 +65,8 @@
     <p class="raveT"> rave</p>
   </div>
 </div>
- 
-<p>footer test</p>
+
 </footer>
+<script src="/global.js"></script>
+ </body>
 </html>

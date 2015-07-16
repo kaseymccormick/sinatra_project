@@ -5,8 +5,8 @@ end
 
 get "/responder/save" do
 
-  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "age_id" => params["age_id"].to_i})    
-
+  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"]})    
+    binding.pry
     @new = true
     erb :"available_times/select_availability_form"
     
@@ -34,6 +34,18 @@ get "/responder/e_mail_save" do
 
 end
 
+get "/user/login" do
+  erb :"responders/login_form"
+end
+
+get "/responder/login" do
+if  Responder.log_in_user(params["e_mail"], params["password"])
+  erb :"available_times/edit_availability_form"
+else
+  @error = true
+  erb :"responder/login_form"
+end
+end
 
 
 

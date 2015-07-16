@@ -9,8 +9,13 @@ function hideMenu(){
   // document.getElementById("haze").className = " ";
 }
 
+// function addhideMenu(){
+//    document.getElementById("menu").style.display = none;
+// }
 hideMenu();
 
 document.getElementById("adminicon").onclick = showMenu;
 
 document.getElementById("adminicon").ondblclick = hideMenu;
+
+// document.getElementsByTagName("a").onclick = addhideMenu;
