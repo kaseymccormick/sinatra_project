@@ -5,8 +5,7 @@ end
 
 get "/responder/save" do
 
-  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"]})    
-    binding.pry
+  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"], "user_weight" => params["user_weight"]})    
     @new = true
     erb :"available_times/select_availability_form"
     

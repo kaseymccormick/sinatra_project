@@ -9,14 +9,13 @@
 
 <table>
   <tr style="font-weight:bold;">
-    <td>Id</td> <td>name</td> <td>e-mail</td> <td>age_id</td>
+    <td>Id</td> <td>name</td> <td>e-mail</td> 
   </tr>
   <% Responder.all.each do |responder| %>
   <tr> 
     <td><%= responder.id %> </td> 
     <td><%= responder.name %>  </td>
     <td><%= responder.e_mail %></td>
-    <td><%= responder.age_id %> </td>
   </tr>
   <% end %>
 </table>

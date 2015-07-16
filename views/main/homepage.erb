@@ -1,5 +1,5 @@
 <div id="intro">
-<p>you've been given this link to take a poll on your availability for an event.</p>
+  <p>you've been given this link to take a poll on your availability for an event.</p>
 </div>
 <form action="/responder/save">
  
@@ -16,8 +16,10 @@
   <label for="zipcode">Zip Code:</label>
   <input type="number" name="zipcode" pattern=".{5,}" required title="5 numbers required" ></br></br>
 
+  <input type="hidden" value="admin" name="user_weight">
+
   <button type="submit">create profile</button>
   <em>already a user?</em>
-<a href="/user/login">login</a>
+  <a href="/user/login">login</a>
 </form>
 
