@@ -200,6 +200,12 @@ a{
     background-color: none;
     border: none;
     background-color: transparent;
+    float: right;
+    position: relative;
+    right: -135px;
+    font-size: 14px;
+    top: -100px;
+    width: 65%;
   }
   
   #menu li {
@@ -214,15 +220,6 @@ a{
     color:white;
   }
   
-  ul {
-    float: right;
-    position: relative;
-    right: -135px;
-    font-size: 14px;
-    top: -100px;
-
-    width: 65%;
-  }
   #menu li:hover{
     text-decoration:underline;
     border: none;

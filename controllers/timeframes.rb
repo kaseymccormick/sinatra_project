@@ -1,6 +1,6 @@
 
 get '/timeframes/add' do
-  erb :"timeframes/add_timeframe_form"
+  erb :"/available_times/set_day_time_form"
 end
 
 get '/timeframes/save' do
@@ -10,7 +10,7 @@ get '/timeframes/save' do
  
   @new_timeframe = true  
   #update the database then send them to
-  erb :"timeframes/add_timeframe_form"
+  erb :"/available_times/set_day_time_form"
   #so it acts like just reloaded page
 end
 
@@ -20,6 +20,6 @@ get "/timeframes/delete" do
 
   Timeframe.delete(params["id"])  
   #update the database then send them to
-  erb :"timeframes/add_timeframe_form"
+  erb :"/available_times/set_day_time_form"
   #so it acts like just reloaded page
 end
