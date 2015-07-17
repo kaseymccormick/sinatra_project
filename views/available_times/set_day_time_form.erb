@@ -1,0 +1,39 @@
+
+
+  <h3>Adding a date to poll form</h3>
+  <ul>the current dates are:
+    <% Day.all.each do |dates| %>
+    <li> ID <%= dates.id %> – <%= dates.date %> </li>
+    <% end %>
+  </ul>
+  <form action="/days/save"> 
+    <label for="date">New date:</label> 
+    <input type="text" placeholder="Monday June 25 2015" name="date">
+    <input type="submit"></br>
+  </form>
+  <form action="/days/delete">
+    <label for="id">please enter <b>one</b> id number of the day you'd like to delete. </label> 
+    <input type="text" placeholder="1" name="id">
+    <input type="submit">
+  </form>
+
+  <h3>Adding a Timeframe</h3>
+  <ul>the current Timeframes are:
+    <% TimeFrame.all.each do |timeframe| %>
+    <li> ID <%= timeframe.id %> – <%= timeframe.slot %> </li>
+    <% end %>
+  </ul>
+  <form action="/timeframes/save"> 
+    <label for="slot">New Timeframe slot:</label> 
+    <input type="text" placeholder="10:00AM - 12:01PM" name="slot">
+    <input type="submit">      
+  </form>
+  <form action="/timeframes/delete">
+    <label for="id">please enter <b>one</b> id number of the time slot you'd like to delete. </label> 
+    <input type="text" placeholder="1" name="id">
+    <input type="submit">
+  </form>
+
+<a href="/setavailability">submit your availability</a>
+
+
