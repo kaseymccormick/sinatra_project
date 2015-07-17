@@ -1,6 +1,13 @@
+#bundling
+require 'rubygems'
+require 'bundler/setup'
+
 require "pry"
 require "sinatra"
 require "sinatra/reloader"
+require"active_support"
+require"active_support/inflector"
+
 
 #sql/ database
 require "sqlite3"

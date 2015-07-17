@@ -1,5 +1,3 @@
-require"active_support"
-require"active_support/inflector"
 
 module DatabaseClassMethods
   #add a new row to the table
