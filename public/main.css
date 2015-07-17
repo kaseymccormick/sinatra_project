@@ -75,7 +75,10 @@ form {
   padding-left: 8px;
   padding-right: 8px;
 }
-  
+#logo h1{
+  color:white;
+}  
+
 h1{
   font-size:24px;
   color:white;
@@ -191,6 +194,7 @@ a{
 
 
 @media (min-width: 640px){
+  
   #adminicon img{
     display:none;
   }
