@@ -9,3 +9,28 @@ CONNECTION.execute("CREATE TABLE IF NOT EXISTS available_times (responders_id IN
 
 # Get results as an Array of Hashes.
 CONNECTION.results_as_hash = true
+
+# --------------------
+#Active record way
+ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'availability_overlap.db')
+
+# So that ActiveRecord explains the SQL it's running in the logs.
+ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+
+#setting up the table responders
+unless ActiveRecord::Base.connection.table_exists?(:responders)
+  ActiveRecord::Base.connection.create_table :responders do |t|
+    t.string :name
+    t.string :e_mail
+    t.string :password
+    t.integer :zipcode
+    t.string :user_weight, :default => admin
+  end  
+end
+
+#setting up the table time_frames
+unless ActiveRecord::Base.connection.table_exists?(:time_frames)
+  ActiveRecord::Base.connection.create_table :time_frames do |t|
+    t.string :slot
+  end  
+end
