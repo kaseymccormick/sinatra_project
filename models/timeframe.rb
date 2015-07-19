@@ -1,29 +1,14 @@
-require "SQLite3"
-require_relative "../database_setup.rb"
-require_relative "../database_class_methods.rb"
-require_relative "../database_instance_methods.rb"
-
-class TimeFrame
-  
-  extend DatabaseClassMethods
-  include DatabaseInstanceMethods
-  
-  attr_reader :id 
-  attr_accessor :slot
-  
-  #initalize a new responder object
-  def initialize(options={})
-    @id = options["id"].to_i
-    @slot = options["slot"]
-  end
-  
-  #update a row in the table via table id
-  #
-  #save - integer
-  #
-  #returns array of hash
-  def save
-    string = "UPDATE timeframes SET slot = '#{@slot}' WHERE id = #{@id};"
-    CONNECTION.execute(string)
-  end
+class TimeFrame < ActiveRecord::Base
+  has_and_belongs_to_many :dates
+  #what validation?
+  #- uniqueness? 
 end
+
+# ----------method example
+#  def top_photo?
+#   if self.albums.length >= 3
+#     true
+#   else
+#     false
+#   end
+# end

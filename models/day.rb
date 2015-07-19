@@ -1,29 +1,11 @@
-require "SQLite3"
-require_relative "../database_setup.rb"
-require_relative "../database_class_methods.rb"
-require_relative "../database_instance_methods.rb"
-
-class Day
-  
-  extend DatabaseClassMethods
-  include DatabaseInstanceMethods
-  
-  attr_reader :id 
-  attr_accessor :date
-  
-  #initalize a new responder object
-  def initialize(options={})
-    @id = options["id"].to_i
-    @date = options["date"]
-  end
-  
-  # may not currently using this method
-  # update 1 row given the id
-  #
-  #save - intiger
-  #
-  #return array
-  def save
-    CONNECTION.execute("UPDATE days SET date = '#{@date}' WHERE id = #{@id};")
-  end
+class Day < ActiveRecord::Base
+    has_and_belongs_to_many :slots # (options = {})
 end
+# ----------method example
+#  def top_photo?
+#   if self.albums.length >= 3
+#     true
+#   else
+#     false
+#   end
+# end

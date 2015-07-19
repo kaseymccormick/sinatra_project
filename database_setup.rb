@@ -29,8 +29,25 @@ unless ActiveRecord::Base.connection.table_exists?(:responders)
 end
 
 #setting up the table time_frames
-unless ActiveRecord::Base.connection.table_exists?(:time_frames)
-  ActiveRecord::Base.connection.create_table :time_frames do |t|
+unless ActiveRecord::Base.connection.table_exists?(:timeframes)
+  ActiveRecord::Base.connection.create_table :timeframes do |t|
     t.string :slot
+  end  
+end
+
+#setting up the table days
+unless ActiveRecord::Base.connection.table_exists?(:days)
+  ActiveRecord::Base.connection.create_table :days do |t|
+    t.string :date
+  end  
+end
+
+
+#setting up the table available times(from before active record now a joining table..thing)
+unless ActiveRecord::Base.connection.table_exists?(:days_responders_timeframes)
+  ActiveRecord::Base.connection.create_table :days_responders_timeframes, id: false do |t|  #must set id to false or there is an id
+    t.integer :days_id
+    t.integer :responders_id
+    t.integer :timeframes_id
   end  
 end

@@ -5,7 +5,7 @@ end
 
 get "/responder/save" do
 
-  if @user = Responder.add({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"], "user_weight" => params["user_weight"]})    
+  if @user = Responder.create({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"], "user_weight" => params["user_weight"]})    
     @new = true
     
     if (Day.all.empty? && TimeFrame.all.empty?)# (see if days and times tables are empty)
