@@ -55,6 +55,7 @@ require_relative "controllers/available_times.rb"
 require "pry"
 require "active_record"
 require "sqlite3"
+require "bcrypt"
 
 
 

@@ -60,10 +60,7 @@ form {
 }
 
 #menu {
-  display: block;
-  position: fixed;
-  top: -20px;
-  right: 20px;
+
 
 }
   
@@ -95,12 +92,11 @@ h1 em{
   color:white;
 }
  
-h2{
-  
-}
-
-h3{
-  
+form a {
+  background-color: #78D080;
+    padding: 3px 9px;
+    border-radius: 5px;
+    font-size: 12px;
 }
 
 footer{
@@ -199,15 +195,22 @@ a{
   }
   
   #menu {
-
+    display: block;
+    position: fixed;
+    top: -20px;
+    right: 20px;
   }
   
   #menu li {
-    float:left;
+    float: left;
     width: 25%;
-    padding: 0px 0px;
-    border: none;
+    padding: 0px 8px;
+    border-right: 1px solid white;
     color: white;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+
   }
   
   a{

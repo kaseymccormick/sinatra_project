@@ -12,7 +12,7 @@ end
   #returns results as objects array
   def self.get_e_mail(e_mail)    
     # Get the first/only row as a Hash.
-    result = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = '#{e_mail}'") 
+    result = ActiveRecord::Base.connection.execute("SELECT * FROM responders WHERE e_mail = '#{e_mail}'") 
      
     results_as_objects = []
       
@@ -34,7 +34,7 @@ end
   end
       
  def log_in_user(e_mail, password)
-   results = CONNECTION.execute("SELECT * FROM responders WHERE e_mail = #{email} AND password = #{password}")
+   results = ActiveRecord::Base.connection.execute("SELECT * FROM responders WHERE e_mail = #{email} AND password = #{password}")
    
    if results.empty?
      return false

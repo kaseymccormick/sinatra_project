@@ -7,7 +7,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   #
   #returns array
   def self.send_availability(responders_id, timeframes_id, days_id)
-    CONNECTION.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES (#{responders_id}, #{timeframes_id}, #{days_id});")
+    ActiveRecord::Base.connection.execute("INSERT INTO available_times (responders_id, timeframes_id, days_id) VALUES (#{responders_id}, #{timeframes_id}, #{days_id});")
   end
 
   #figure out the day that occurs most in the available_times table by counting each and returning the id
@@ -17,7 +17,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   #
   #returns an intiger due to .first["days_id"]
   def self.most_days
-    CONNECTION.execute("SELECT days_id, COUNT(days_id) FROM available_times GROUP BY days_id ORDER BY COUNT(days_id) DESC LIMIT 1;").first["days_id"]
+    ActiveRecord::Base.connection.execute("SELECT days_id, COUNT(days_id) FROM available_times GROUP BY days_id ORDER BY COUNT(days_id) DESC LIMIT 1;").first["days_id"]
   end
 
   #figure out the most frequent timeframe of the most frequent day and return the timeframe id
@@ -26,7 +26,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   #
   #returns an intiger of the id of the slot due to .first["timeframes_id"]
   def self.most_timeframes(day_id)
-    CONNECTION.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id HAVING days_id = #{day_id} ORDER BY COUNT(timeframes_id);").first["timeframes_id"]
+    ActiveRecord::Base.connection.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM available_times GROUP BY timeframes_id HAVING days_id = #{day_id} ORDER BY COUNT(timeframes_id);").first["timeframes_id"]
   end
 
   #get a list of responders that have submited that timeframe and day as available
@@ -35,7 +35,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   #
   #Should returns an array of hashes
   def self.list_responders(timeframes_id, days_id)
-    CONNECTION.execute("SELECT responders_id FROM available_times WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
+    ActiveRecord::Base.connection.execute("SELECT responders_id FROM available_times WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
   end
 
 
@@ -48,7 +48,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
     # Figure out the table's name from the class we're calling the method on.
     table_name    = self.to_s.pluralize.underscore
 
-    results = CONNECTION.execute("SELECT * FROM available_times WHERE responders_id = #{id}")
+    results = ActiveRecord::Base.connection.execute("SELECT * FROM available_times WHERE responders_id = #{id}")
 
     if results.empty?
       return []
@@ -64,7 +64,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   end
 
   def self.delete_all(id)
-    CONNECTION.execute("DELETE FROM available_times WHERE responders_id = #{id}")
+    ActiveRecord::Base.connection.execute("DELETE FROM available_times WHERE responders_id = #{id}")
   end
 
 
