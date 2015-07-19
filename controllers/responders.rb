@@ -55,5 +55,8 @@ get "/responder/login" do
   end
 end
 
+get '/user_availability/responders/availability' do
+  erb :"available_times/availability_table"
+end
 
 
