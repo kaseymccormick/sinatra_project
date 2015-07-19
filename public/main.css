@@ -60,13 +60,11 @@ form {
 }
 
 #menu {
-  background-color: white;
-  z-index: 100;
-  position: absolute;
-  width: 75%;
-  left: 5%;
-  border: 1px solid #78D080;
-  border-radius: 10px;
+  display: block;
+  position: fixed;
+  top: -20px;
+  right: 20px;
+
 }
   
 #intro p {
@@ -88,12 +86,13 @@ h1{
 
 h1 span{
   font-weight:300;
+  color:white;
 }
  
 h1 em{
   font-style:normal;
   font-weight:400;
-  color:;
+  color:white;
 }
  
 h2{
@@ -200,16 +199,7 @@ a{
   }
   
   #menu {
-    display: block;
-    background-color: none;
-    border: none;
-    background-color: transparent;
-    float: right;
-    position: relative;
-    right: -135px;
-    font-size: 14px;
-    top: -100px;
-    width: 65%;
+
   }
   
   #menu li {
