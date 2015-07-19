@@ -4,8 +4,8 @@ get "/responder/add" do
 end
 
 get "/responder/save" do
-
-  if @user = Responder.create({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => params["password"], "zipcode" => params["zipcode"], "user_weight" => params["user_weight"]})    
+  the_password = BCrypt::Password.create(params["password"])
+  if @user = Responder.create({"name"=> params["name"], "e_mail" => params["e_mail"], "password" => the_password , "zipcode" => params["zipcode"], "user_weight" => params["user_weight"]})    
     @new = true
     
     if (Day.all.empty? && TimeFrame.all.empty?)# (see if days and times tables are empty)
@@ -13,10 +13,11 @@ get "/responder/save" do
     else
       erb :"available_times/select_availability_form"
     end
-  else
-    @user = Responder.get_e_mail(params["e_mail"]).first 
-    @user_availability = AvailableTime.find_all_of(@user.id)
-    erb :"available_times/edit_availability_form"
+# think not needed
+  # else
+  #   @user = Responder.get_e_mail(params["e_mail"]).first
+  #   @user_availability = AvailableTime.find_all_of(@user.id)
+  #   erb :"available_times/edit_availability_form"
   end
   
 end
