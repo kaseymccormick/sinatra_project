@@ -17,7 +17,7 @@ get "/user_availability/save" do
   
   hash_of_answers.each do |day, times|
     times.each do |time|
-      AvailableTime.send_availability(params["responders_id"], time, day)
+      Days_Responders_Timeframes.create({"responders_id" => params["responders_id"], "timeframes_id" => time, "days_id" => day})
     end
   end
   
