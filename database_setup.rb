@@ -24,7 +24,7 @@ unless ActiveRecord::Base.connection.table_exists?(:responders)
     t.string :e_mail
     t.string :password
     t.integer :zipcode
-    t.string :user_weight, :default => admin
+    t.string :user_weight 
   end  
 end
 

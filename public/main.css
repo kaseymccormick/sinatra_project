@@ -1,4 +1,5 @@
 /*  typeface treatments*/
+
 body{
   font-family: 'Quicksand', sans-serif;
   color:#739996;
@@ -60,7 +61,10 @@ form {
 }
 
 #menu {
-
+  position: absolute;
+  width: 45%;
+  right: 72px;
+  background-color: #78D080;
 
 }
   
@@ -108,21 +112,21 @@ footer{
 #menu li { 
   list-style: none;
   padding: 20px 5px;
-  border: 1px solid #739996;
+  border: 1px solid white;
   width: 90%;
   margin-top: 11px;
   text-align: center;
 }
 a{
   text-decoration:none;
-  color:#739996;    
+  color:white;    
 }
 #pallete {
   padding-top: 80px;
 }
   
 #menu li:hover{
-  border: 3px solid #739996;
+  font-weight:bold;
 }
 
 /*---color pallete stuff--*/
@@ -189,6 +193,7 @@ a{
 
 
 @media (min-width: 640px){
+
   
   #adminicon img{
     display:none;
