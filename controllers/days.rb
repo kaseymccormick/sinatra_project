@@ -3,7 +3,7 @@ get '/days/edit' do
 end
 
 get '/days/save' do
-  Day.add(params) 
+  Day.create(params) 
   @new_day = true
   erb :"/available_times/set_day_time_form"
 end

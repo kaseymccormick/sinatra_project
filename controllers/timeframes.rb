@@ -5,7 +5,7 @@ end
 
 get '/timeframes/save' do
 
-  TimeFrame.add(params)
+  TimeFrame.create(params)
 
  
   @new_timeframe = true  
