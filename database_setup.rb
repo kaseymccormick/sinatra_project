@@ -45,7 +45,7 @@ end
 
 #setting up the table available times(from before active record now a joining table..thing)
 unless ActiveRecord::Base.connection.table_exists?(:days_responders_time_frames)
-  ActiveRecord::Base.connection.create_table :days_responders_timeframes, id: false do |t|  #must set id to false or there is an id
+  ActiveRecord::Base.connection.create_table :days_responders_time_frames, id: false do |t|  #must set id to false or there is an id
     t.integer :days_id
     t.integer :responders_id
     t.integer :timeframes_id

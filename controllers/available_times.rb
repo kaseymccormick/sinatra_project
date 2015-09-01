@@ -17,7 +17,7 @@ get "/user_availability/save" do
   
   hash_of_answers.each do |day, times|
     times.each do |time|
-      Days_Responders_Timeframes.create({"responders_id" => params["responders_id"], "timeframes_id" => time, "days_id" => day})
+      Days_Responders_Time_frames.create({"responders_id" => params["responders_id"], "timeframes_id" => time, "days_id" => day})
     end
   end
   
@@ -31,16 +31,17 @@ get "/responders/availability" do
 end
 
 get "/user_availability/best" do
-  @date = Days_Responders_Timeframes.most_days
-  @frame = Days_Responders_Timeframes.most_timeframes(@date)
+  @date = Days_Responders_Time_frames.most_days
   binding.pry
-  @users = Days_Responders_Timeframes.list_responders(@frame, @date)
+  @frame = Days_Responders_Time_frames.most_timeframes(@date)
+  binding.pry
+  @users = Days_Responders_Time_frames.list_responders(@frame, @date)
   erb :"available_times/best_availability"
 end 
 
 get '/responder/delete_availability' do
   @user_id = params["responders_id"].to_i  
-  Days_Responders_Timeframes.delete_all(@user_id)
+  Days_Responders_Time_frames.delete_all(@user_id)
   erb :"/available_times/new_availability_form"
 end
 

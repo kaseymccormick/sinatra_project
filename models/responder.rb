@@ -3,7 +3,7 @@ class Responder < ActiveRecord::Base
   # has_and_belongs_to_many :days
   #what validation?
   #- uniqueness? (figure out selction pariing allowances)
-end
+
     
   #get row from table with email
   #
@@ -33,7 +33,7 @@ end
     get_e_mail(e_mail).length > 0
   end
       
- def log_in_user(e_mail, password)
+ def self.log_in_user(e_mail, password)
    results = ActiveRecord::Base.connection.execute("SELECT * FROM responders WHERE e_mail = #{email} AND password = #{password}")
    
    if results.empty?
@@ -44,3 +44,4 @@ end
    end
  end
     
+    end

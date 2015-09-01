@@ -1,4 +1,4 @@
-class Days_Responders_Timeframes < ActiveRecord::Base
+class Days_Responders_Time_frames < ActiveRecord::Base
 
 
   #insert into key table all responder id timeframe and day combinations from the form
@@ -35,7 +35,7 @@ class Days_Responders_Timeframes < ActiveRecord::Base
   #
   #Should returns an array of hashes
   def self.list_responders(timeframes_id, days_id)
-    ActiveRecord::Base.connection.execute("SELECT responders_id FROM days_responders_time_frames WHERE timeframes_id = #{timeframes_id} AND days_id = '#{days_id}';")
+    ActiveRecord::Base.connection.execute("SELECT responders_id FROM days_responders_time_frames WHERE timeframes_id = #{timeframes_id} AND days_id = #{days_id};")
   end
 
 
