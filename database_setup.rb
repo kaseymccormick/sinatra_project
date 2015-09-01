@@ -22,9 +22,7 @@ unless ActiveRecord::Base.connection.table_exists?(:responders)
   ActiveRecord::Base.connection.create_table :responders do |t|
     t.string :name
     t.string :e_mail
-    t.string :password
     t.integer :zipcode
-    t.string :user_weight 
   end  
 end
 
