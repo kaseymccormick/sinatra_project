@@ -6,16 +6,17 @@
 <% end %>
 <table>
   <tr style="font-weight:bold;">
-    <td>responder_id</td> 
-    <td>timeframes_id</td> 
-    <td>days_id</td>
+    <td>responder</td> 
+    <td>Day</td> 
+    <td>Time Frame</td>
   </tr>
        
   <% Days_Responders_Time_frames.all.each do |slot| %>
   <tr>
     <td> <%= slot.responders_id %></td>
-    <td> <%= slot.timeframes_id %></td>
     <td> <%= slot.days_id %></td>
+    <td> <%= slot.timeframes_id %></td>
+    
   </tr>
   <% end %>
       

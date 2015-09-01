@@ -26,7 +26,7 @@ class Days_Responders_Time_frames < ActiveRecord::Base
   #
   #returns an intiger of the id of the slot due to .first["timeframes_id"]
   def self.most_timeframes(day_id)
-    ActiveRecord::Base.connection.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM days_responders_time_frames GROUP BY timeframes_id HAVING days_id = #{day_id} ORDER BY COUNT(timeframes_id);").first["timeframes_id"]
+    ActiveRecord::Base.connection.execute("SELECT timeframes_id, COUNT(timeframes_id) FROM days_responders_time_frames GROUP BY timeframes_id HAVING days_id = 3 ORDER BY timeframes_id DESC;").first["timeframes_id"]
   end
 
   #get a list of responders that have submited that timeframe and day as available
